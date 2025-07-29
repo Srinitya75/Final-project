@@ -41,7 +41,7 @@ secure_login.html: Displays at top of the page whether the username / passord is
                   check whether the username / password is valid or not and sends a message to this page which is displayed on top of the page
                  
 sqli_detector.py: python file to detect the vulnerabilites for the project
-                   testing 
+                  see section "Automating testing project"
                    
 sql_injection.log: penetration testing log file
                   logs url, input values for admin & password, status code
@@ -68,6 +68,6 @@ Automating testing project
    sudo chmod +X sql_detector.py
 4. Once this command is executed successfully the sql_detector.py can be executed with the below command to trigger the testing sequence
    sudo python3 sql_detector.py
-   
-
+5. the log file is generated with filename "sql_injection.log"   
+6. check the log file for the details
 
