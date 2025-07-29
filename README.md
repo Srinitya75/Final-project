@@ -24,10 +24,9 @@ Contents of the project and their actions
               though user provides the sql injection username / password values, the actions fails.
               where as in general login / case 1, the results fail
 
-* schema.sql: sql file to create the tables users & products 
+* schema.sql: sql file to create the tables users 
             1. users: unique username & password can be inserted here to allow login to system
-            2. products: multiple products and their description can be insterted in to this table to check access for the verified login
-            
+  
 * vulnerable_login.html: Displays at top of the page whether the username / passord is valid. 
                   this page gets displayed when the user is logged in as a consequence of action index.html
                   triggered from app.py contains the flask code which does not check for vulnerability sql code, and executes it
