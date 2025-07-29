@@ -85,41 +85,6 @@ def vulnerable_login():
 
     return render_template('vulnerable_login.html', message=message)
 
-# --- Vulnerable Search ---
-@app.route('/vulnerable_search', methods=['GET', 'POST'])
-def vulnerable_search():
-    """
-    Vulnerable search page.
-    Demonstrates SQL Injection via concatenated string in query.
-    """
-    products = []
-    search_query = ''
-    message = ''
-
-    if request.method == 'POST':
-        search_query = request.form.get('query', '')
-        db = get_db()
-        cursor = db.cursor()
-
-        # !!! VULNERABLE SQL QUERY !!!
-        # User input is directly concatenated into the SQL query.
-        # Example injection: %' UNION SELECT name, description, price FROM products --
-        # Example injection: %' OR 1=1 --
-        # Example injection: %' AND 1=2 UNION SELECT 'Injected Name', 'Injected Desc', 999.99 --
-        query = f"SELECT name, description, price FROM products WHERE name LIKE '%{search_query}%'"
-        print(f"Vulnerable Search Query: {query}") # For debugging/demonstration
-
-        try:
-            cursor.execute(query)
-            products = cursor.fetchall()
-            if not products:
-                message = "No products found."
-        except sqlite3.Error as e:
-            message = f"Database error: {e}"
-            print(f"SQL Error during vulnerable search: {e}")
-
-    return render_template('vulnerable_search.html', products=products, search_query=search_query, message=message)
-
 # --- Secure Login (Parameterized) ---
 @app.route('/secure_login', methods=['GET', 'POST'])
 def secure_login():
@@ -154,39 +119,6 @@ def secure_login():
             print(f"SQL Error during secure login: {e}")
 
     return render_template('secure_login.html', message=message)
-
-# --- Secure Search (Parameterized) ---
-@app.route('/secure_search', methods=['GET', 'POST'])
-def secure_search():
-    """
-    Secure search page using parameterized queries.
-    Prevents SQL Injection.
-    """
-    products = []
-    search_query = ''
-    message = ''
-
-    if request.method == 'POST':
-        search_query = request.form.get('query', '')
-        db = get_db()
-        cursor = db.cursor()
-
-        # --- SECURE SQL QUERY (Parameterized) ---
-        # Parameters are passed separately to execute, preventing injection.
-        query = "SELECT name, description, price FROM products WHERE name LIKE ?"
-        param = f"%{search_query}%"
-        print(f"Secure Search Query (Parameterized): {query} with param: {param}")
-
-        try:
-            cursor.execute(query, (param,))
-            products = cursor.fetchall()
-            if not products:
-                message = "No products found."
-        except sqlite3.Error as e:
-            message = f"Database error: {e}"
-            print(f"SQL Error during secure search: {e}")
-
-    return render_template('secure_search.html', products=products, search_query=search_query, message=message)
 
 
 # --- Dashboard and Logout ---
