@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQLi Playground</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md text-center">
+        <h1 class="text-4xl font-bold text-gray-800 mb-6">SQLi Playground</h1>
+        <p class="text-gray-600 mb-8">Explore SQL Injection vulnerabilities and their prevention.</p>
+
+        <div class="space-y-4">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4">Vulnerable Sections</h2>
+            <a href="/vulnerable_login" class="block bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+                Vulnerable Login
+            </a>
+            <a href="/vulnerable_search" class="block bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+                Vulnerable Search
+            </a>
+
+            <h2 class="text-2xl font-semibold text-gray-700 mt-8 mb-4">Secure Sections</h2>
+            <a href="/secure_login" class="block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+                Secure Login (Parameterized)
+            </a>
+            <a href="/secure_search" class="block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+                Secure Search (Parameterized)
+            </a>
+        </div>
+    </div>
+</body>
+</html>
