@@ -51,10 +51,23 @@ Starting the web project
 1. Make a directory "Project"
 2. Go to the directory "Project"
 3. Copy all the files in to "Project"
-4. At command prompt
+4. At command prompt invoke the web project using this command
+   $ python3 app.py
+5. Starts the webserver at port 5000
+
+Testing the web project
+---------------------
+1. Invoke the url
+   http://127.0.0.1:5000
+2. Start testing
 
 Automating testing project
 ---------------------------
-sdfd
+1. Goto directory "Project"
+2. Give executable permissions for sql_detector.py using following command
+   sudo chmod +X sql_detector.py
+4. Once this command is executed successfully the sql_detector.py can be executed with the below command to trigger the testing sequence
+   sudo python3 sql_detector.py
+   
 
 
